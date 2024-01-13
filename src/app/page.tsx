@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import styles from './styles/page.module.css';
+import { ProductList } from '@/components';
+import './styles/main.scss';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>
-        <h1>Products should be listing here</h1>
-      </div>
-    </main>
+    <div className='main'>
+      <ProductList />
+    </div>
   );
 }
