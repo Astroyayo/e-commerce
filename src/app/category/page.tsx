@@ -3,6 +3,7 @@ import React, { use } from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { GET_ALL_CATEGORIES } from '@/assets/enpoints';
 
 const Category = () => {
   const [categories, setCategories] = useState<any>([]);
@@ -10,9 +11,7 @@ const Category = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<any>(
-          'https://fakestoreapi.com/products/categories'
-        );
+        const response = await axios.get<any>(GET_ALL_CATEGORIES);
         setCategories(response.data);
       } catch (error: any) {
         //oops un error bro

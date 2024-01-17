@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ProductCard } from '@/components';
 import { Product } from '@/assets/types';
+import { GET_PRODUCTS_BY_CATEGORY } from '@/assets/enpoints';
 
 const CategoryPage = ({ params }: { params: { category: string } }) => {
   const [categoryProducts, setCategoryProducts] = useState<any>([]);
@@ -11,7 +12,7 @@ const CategoryPage = ({ params }: { params: { category: string } }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get<Product>(
-          `https://fakestoreapi.com/products/category/${params.category}`
+          `${GET_PRODUCTS_BY_CATEGORY}/${params.category}`
         );
         setCategoryProducts(response.data);
       } catch (error: unknown) {
