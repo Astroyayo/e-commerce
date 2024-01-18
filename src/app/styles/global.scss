@@ -1,0 +1,102 @@
+// Font Sizes
+$base-font-size: 16px;
+$small-font-size: 14px;
+$medium-font-size: 16px;
+$large-font-size: 18px;
+$extra-large-font-size: 24px;
+
+// Primary color
+$primary-color: #253147;
+$font-color: #000;
+
+// Shades
+$light-shade: #fff;
+$dark-shade: lighten($primary-color, 10%);
+$lighter-shade: lighten($primary-color, 20%);
+$darkest-shade: darken($primary-color, 20%);
+$lightest-shade: lighten($primary-color, 30%);
+
+// Secondary colors
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$success-color: #2ecc71;
+$warning-color: #f39c12;
+$info-color: #3498db;
+
+// Global Styles
+$background-color: $light-shade;
+$text-color: $font-color;
+
+//spacing
+$base-spacing: 8px;
+$small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing * 2;
+
+//border radius
+$base-border-radius: 4px;
+
+//box shadows
+$base-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+//z-index values
+$base-z-index: 10;
+
+//transition durations
+$base-transition-duration: 0.3s;
+
+//responsive breakpoints
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 900px;
+$desktop-breakpoint: 1200px;
+
+//media query mixins
+@mixin mobile {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+// Usage
+.element {
+  @include mobile {
+    // Styles for mobile
+  }
+}
+
+$base-font-family: 'Arial', sans-serif;
+body {
+  font-family: $base-font-family;
+}
+
+// Font Styles
+body {
+  font-size: $base-font-size;
+}
+
+h1 {
+  font-size: $extra-large-font-size;
+}
+
+h2 {
+  font-size: $large-font-size;
+}
+
+h3 {
+  font-size: $medium-font-size;
+}
+
+h4 {
+  font-size: $medium-font-size;
+}
+
+h5 {
+  font-size: $small-font-size;
+}
+
+h6 {
+  font-size: $small-font-size;
+}
+
+p {
+  font-size: $medium-font-size;
+}
